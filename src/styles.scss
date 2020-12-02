@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.main-container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    main{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+}
+.answer-row:not(:last-child){
+    border-bottom: 1px solid #222;
+}
+.answer-row{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.snippet-code {
+    border: 1px solid #222;
+    border-radius: 5px;
+    padding: 12px;
+}
+pre code {
+    background-color: #f6f6f6;
+}

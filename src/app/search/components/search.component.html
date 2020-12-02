@@ -1,0 +1,15 @@
+<div class="container">
+  <form [formGroup]="formSearch" (ngSubmit)="submit()" class="col-lg-6 offset-lg-3 ">
+    <div class="d-flex justify-content-center">
+          <mat-form-field appearance="fill">
+            <mat-icon matSuffix>search</mat-icon>
+            <mat-label>Search....</mat-label>
+            <input matInput formControlName="search">
+          </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" class="my-auto ml-5">Submit</button>
+    </div>
+  </form>
+  <div *ngIf="error" class="alert alert-danger" role="alert">
+    an error occured: {{error}} 
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div *ngIf="error" class="alert alert-danger" role="alert">
+    an error occured: {{error}}
+</div>
+<div *ngIf="question" class="container">
+    <h3 class="title" [innerHtml]="question!.items[0].title | sanitizeHtml"></h3>
+    <p class="body" [innerHtml]="question!.items[0].body | sanitizeHtml"></p>
+</div>
+
+<hr>
+
+<div *ngIf="answer" class="container">
+    <div class="row answer-row" *ngFor="let item of answer?.items">
+        <div class="col-lg-2 col-sm-4">
+            <div class="stats">
+                <strong>score:{{item.score}}</strong>
+            </div>
+        </div>
+        <div class="col-lg-10 col-sm-8">
+            <div class="body pb-2" [innerHtml]="item.body | sanitizeHtml">
+            </div>
+            <div class="excerpt">
+                answered: {{item.creation_date | date:'dd/MM/yyyy HH:mm:ss'}}
+            </div>
+        </div>
+    </div>
+</div>
